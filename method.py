@@ -13,6 +13,4 @@ class Hero:
     def SayHi(self):
         print "Hello,how are you?"
 
-
-Wolf = Hero()
-Wolf.SayHi()
+Hero().SayHi()

@@ -4,9 +4,9 @@ import urllib
 import re
 
 
-num = 7926
+num = 3223
 html = 'http://www.meitulu.com/item/%d.html'% num
-n = 770
+n = 7
 page = urllib.urlopen(html)
 html_yuan = page.read()
 reg = r'src=(http.+?\d{17}\.jpg)'
@@ -18,7 +18,7 @@ for img_false in imglist:
     n += 1
 print n
 m = n
-for x in range(2,14):
+for x in range(2,17):
     html ='http://www.meitulu.com/item/%d_%s.html'%(num,x)
     print html
     page = urllib.urlopen(html)

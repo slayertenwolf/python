@@ -1,0 +1,27 @@
+import re
+import os
+import urllib.request
+'''
+确定网页的number，图片的数量
+用for循环写入txt文件
+用迅雷批量下载直接下图片
+'''
+'''url_http = 'https://www.meitulu.com/item/17249.html'
+url_read = urllib.request.urlopen(url_http).read()
+print(url_read)
+
+find_url = r'src="https://mtl.xtpxw.com/images/img/17249/1.jpg"'
+url = re.findall(find_url,url_read)
+print(url)
+'''
+
+def getmm_url(no,page_num):
+
+	img_num = 4 * page_num + 1
+	with open('./list.txt','a') as file:
+		for x in range(1,img_num):
+			download_url = f'https://mtl.xtpxw.com/images/img/{no}/{x}.jpg'
+			file.write(download_url+'\n')
+
+getmm_url(19062,16)
+print('Download_url is written.\n')
